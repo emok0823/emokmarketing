@@ -34,7 +34,7 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
 
-#gl{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0;background:#040404}
+#gl{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100lvh;display:block;z-index:0;background:#040404}
 #journey{position:relative;height:1300vh;z-index:1}
 
 /* ---------- tiny UI type (reference: bold uppercase grotesk) ---------- */
@@ -74,13 +74,17 @@ html.lenis,html.lenis body{height:auto}
 .cap-right .ui-kr{margin-top:12px;opacity:.9}
 .hint{position:absolute;right:var(--pad);bottom:var(--pad);text-align:right}
 .hint b{display:block;font-weight:700}
+.clip-wait{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;opacity:0;visibility:hidden;letter-spacing:.22em;text-align:center}
+.clip-wait i{display:block;width:44px;height:1px;margin:12px auto 0;background:currentColor;transform-origin:left}
+.clip-wait.on i{animation:cw 1.6s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes cw{0%{transform:scaleX(0);opacity:1}70%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
 
 /* chapter strip (bottom-left) */
 .strip{position:absolute;left:var(--pad);bottom:var(--pad);display:flex;gap:clamp(14px,2vw,30px);opacity:var(--chui);transform:translateY(calc((1 - var(--chui)) * 10px))}
 .ch-item{position:relative;display:flex;gap:10px;align-items:flex-start;text-align:left;padding-top:11px;opacity:.56;transition:opacity .6s;pointer-events:auto}
 .ch-item:hover{opacity:.9}
 .ch-item::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.18);opacity:0;transition:opacity .6s}
-.ch-item::after{content:"";position:absolute;left:0;top:0;height:1px;width:calc(var(--prog,0) * 100%);background:var(--ink);opacity:0;transition:opacity .6s}
+.ch-item::after{content:"";position:absolute;left:0;top:0;height:1px;width:100%;transform:scaleX(var(--prog,0));transform-origin:left;background:var(--ink);opacity:0;transition:opacity .6s}
 .ch-item.is-active{opacity:1}
 .ch-item.is-active::before,.ch-item.is-active::after{opacity:1}
 .ch-item img{width:62px;height:39px;object-fit:cover;display:block;background:#222;box-shadow:0 2px 10px rgba(0,0,0,.3)}
@@ -235,6 +239,13 @@ html.lenis,html.lenis body{height:auto}
   .works{grid-template-columns:1fr}
   .hdr-logo{font-size:14px}
 }
+/* touch devices: no blur filters over the moving canvas (each one re-blurs every frame on a phone GPU) */
+@media (pointer:coarse){
+  .t-el,.intro-el{filter:none!important}
+  .btn{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(10,10,10,.4)}
+  .btn.solid{background:var(--ink)}
+  #about-panel{backdrop-filter:none;-webkit-backdrop-filter:none}
+}
 @media (prefers-reduced-motion:reduce){
   .rv{transform:none;transition:none}
   .t-el,.intro-el{filter:none!important;transform:none!important}
@@ -354,6 +365,7 @@ html.lenis,html.lenis body{height:auto}
     <p class="ui-kr">경기도 수원시 권선구 입북로 80-6<br>010-7134-3089</p>
   </div>
   <p class="hint ui shadow t-el" data-a="0.975" data-b="9">Scroll to<br>explore</p>
+  <p class="clip-wait ui shadow" aria-hidden="true">Loading<i></i></p>
 
   <!-- chapter UI -->
   <div class="postcards" aria-hidden="true">
@@ -491,7 +503,7 @@ html.lenis,html.lenis body{height:auto}
 </main>
 
 <script>window.EMOK_ASSETS = "https://emok0823.github.io/emokmarketing/";</script>
-<script src="https://emok0823.github.io/emokmarketing/app.js?v=31bd421f"></script>
+<script src="https://emok0823.github.io/emokmarketing/app.js?v=f1d3c7d6"></script>
 <script>
 /* 카페24가 쇼핑몰 공통 SEO 제목으로 덮어쓰므로, 이 디자인에서는 브라우저 제목·설명을 이목마케팅으로 맞춥니다 */
 document.title = "이목마케팅 EMOK MARKETING";
