@@ -162,8 +162,11 @@ html.lenis,html.lenis body{height:auto}
 
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px)}
 .work{position:relative;padding:14px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0))}
-.work-art{aspect-ratio:1.35;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 15%,#2a2520,#141210 70%);position:relative;overflow:hidden}
-.work-art::before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,164,93,.55);box-shadow:inset 0 0 0 4px rgba(201,164,93,.12),inset 0 0 0 5px rgba(201,164,93,.4)}
+.work-art{aspect-ratio:16/9;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 15%,#2a2520,#141210 70%);position:relative;overflow:hidden}
+.work-art::before{content:"";position:absolute;inset:10px;z-index:2;pointer-events:none;border:1px solid rgba(201,164,93,.55);box-shadow:inset 0 0 0 4px rgba(201,164,93,.12),inset 0 0 0 5px rgba(201,164,93,.4)}
+.work-art::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(130% 100% at 50% 45%,rgba(12,10,8,0) 58%,rgba(12,10,8,.42))}
+.work-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.work:hover .work-art img{transform:scale(1.04)}
 .work-art span{font-family:var(--serif);font-weight:500;font-size:clamp(54px,6vw,96px);line-height:1;color:#e9dcc0;text-shadow:0 0 40px rgba(201,164,93,.35)}
 .work-art .kr{font-family:var(--kserif);font-weight:700;font-size:clamp(34px,3.6vw,58px)}
 .work h3{margin:16px 0 4px;font-family:var(--kserif);font-weight:700;font-size:19px;letter-spacing:-.02em}
@@ -445,14 +448,14 @@ html.lenis,html.lenis body{height:auto}
     <section class="sec" id="works">
       <div class="sec-head rv"><span class="ui">[03] Selected Works</span><span class="ui">함께한 브랜드</span></div>
       <div class="works">
-        <article class="work rv"><div class="work-art"><span class="kr">수원</span></div><h3>수원시청<em>Suwon City</em></h3><p class="ui">Campaign</p></article>
-        <article class="work rv"><div class="work-art"><span>S</span></div><h3>신한<em>Shinhan</em></h3><p class="ui">Campaign</p></article>
-        <article class="work rv"><div class="work-art"><span>A</span></div><h3>에이브랩<em>AIBLAB</em></h3><p class="ui">Campaign</p></article>
-        <article class="work rv"><div class="work-art"><span>H</span></div><h3>해탄<em>Haetan</em></h3><p class="ui">Campaign</p></article>
-        <article class="work rv"><div class="work-art"><span>J</span></div><h3>닥터진의원<em>Dr.Jin's Clinic</em></h3><p class="ui">Campaign</p></article>
-        <article class="work rv"><div class="work-art"><span>D</span></div><h3>드레싱테이블<em>Dressing Table</em></h3><p class="ui">Campaign</p></article>
+        <article class="work rv"><div class="work-art"><span class="kr">수원</span><img src="https://framerusercontent.com/images/Ylf3pcQg31pPmMCfaw7TPRJpzEI.png?scale-down-to=1024" srcset="https://framerusercontent.com/images/Ylf3pcQg31pPmMCfaw7TPRJpzEI.png?scale-down-to=512 512w, https://framerusercontent.com/images/Ylf3pcQg31pPmMCfaw7TPRJpzEI.png?scale-down-to=1024 1024w" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw" alt="수원시청 캠페인 대표 이미지" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>수원시청<em>Suwon City</em></h3><p class="ui">Campaign</p></article>
+        <article class="work rv"><div class="work-art"><span>S</span><img src="https://framerusercontent.com/images/wP6uBfesmkRNLSuiIwZVrohMMF0.png?scale-down-to=1024" srcset="https://framerusercontent.com/images/wP6uBfesmkRNLSuiIwZVrohMMF0.png?scale-down-to=512 512w, https://framerusercontent.com/images/wP6uBfesmkRNLSuiIwZVrohMMF0.png?scale-down-to=1024 1024w" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw" alt="신한 캠페인 대표 이미지" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>신한<em>Shinhan</em></h3><p class="ui">Campaign</p></article>
+        <article class="work rv"><div class="work-art"><span>A</span><img src="https://framerusercontent.com/images/gU7pUft0g51632dYco8fFop9wIQ.png?scale-down-to=1024" srcset="https://framerusercontent.com/images/gU7pUft0g51632dYco8fFop9wIQ.png?scale-down-to=512 512w, https://framerusercontent.com/images/gU7pUft0g51632dYco8fFop9wIQ.png?scale-down-to=1024 1024w" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw" alt="에이브랩 캠페인 대표 이미지" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>에이브랩<em>AIBLAB</em></h3><p class="ui">Campaign</p></article>
+        <article class="work rv"><div class="work-art"><span>H</span><img src="https://framerusercontent.com/images/gKhWMBqDoH09L893OIFO5k2KNM.png?scale-down-to=1024" srcset="https://framerusercontent.com/images/gKhWMBqDoH09L893OIFO5k2KNM.png?scale-down-to=512 512w, https://framerusercontent.com/images/gKhWMBqDoH09L893OIFO5k2KNM.png?scale-down-to=1024 1024w" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw" alt="해탄 캠페인 대표 이미지" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>해탄<em>Haetan</em></h3><p class="ui">Campaign</p></article>
+        <article class="work rv"><div class="work-art"><span>J</span><img src="https://framerusercontent.com/images/JTFue03OxultAb4twqzksDXVw.png?scale-down-to=1024" srcset="https://framerusercontent.com/images/JTFue03OxultAb4twqzksDXVw.png?scale-down-to=512 512w, https://framerusercontent.com/images/JTFue03OxultAb4twqzksDXVw.png?scale-down-to=1024 1024w" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw" alt="닥터진의원 캠페인 대표 이미지" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>닥터진의원<em>Dr.Jin's Clinic</em></h3><p class="ui">Campaign</p></article>
+        <article class="work rv"><div class="work-art"><span>D</span><img src="https://framerusercontent.com/images/vuZXtQAxzlsen2l5Dm5BALFKw30.png?scale-down-to=1024" srcset="https://framerusercontent.com/images/vuZXtQAxzlsen2l5Dm5BALFKw30.png?scale-down-to=512 512w, https://framerusercontent.com/images/vuZXtQAxzlsen2l5Dm5BALFKw30.png?scale-down-to=1024 1024w" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw" alt="드레싱테이블 캠페인 대표 이미지" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>드레싱테이블<em>Dressing Table</em></h3><p class="ui">Campaign</p></article>
       </div>
-      <div class="more rv"><a class="btn" href="https://emokmarketing.com/" target="_blank" rel="noopener"><span class="kr">전체 프로젝트 보기</span> ↗</a></div>
+      <div class="more rv"><a class="btn" href="https://emokproduction.com/" target="_blank" rel="noopener"><span class="kr">전체 프로젝트 보기</span> ↗</a></div>
     </section>
 
     <section class="sec" id="process">
