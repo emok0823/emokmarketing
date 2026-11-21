@@ -491,6 +491,11 @@ html.lenis,html.lenis body{height:auto}
 </main>
 
 <script>window.EMOK_ASSETS = "https://emok0823.github.io/emokmarketing/";</script>
-<script src="https://emok0823.github.io/emokmarketing/app.js?v=309affc5"></script>
+<script src="https://emok0823.github.io/emokmarketing/app.js?v=31bd421f"></script>
+<script>
+/* 카페24가 쇼핑몰 공통 SEO 제목으로 덮어쓰므로, 이 디자인에서는 브라우저 제목·설명을 이목마케팅으로 맞춥니다 */
+document.title = "이목마케팅 EMOK MARKETING";
+(function () { var d = document.querySelector('meta[name="description"]'); if (d) d.setAttribute("content", "이목마케팅은 브랜드 전략부터 콘텐츠 제작, 광고 운영까지 직접 수행하는 브랜드 성장 파트너입니다. 경기도 수원시 권선구 입북로 80-6 · 010-7134-3089"); })();
+</script>
 </body>
 </html>
